@@ -24,7 +24,9 @@ A modern AI-powered Learning Management System built with MERN Stack.
 
 </p>
 
+## 🌐 Live Demo
 
+🔗 https://skillvault-1.onrender.com/
 ---
 
 # 🎬 Demo Preview
