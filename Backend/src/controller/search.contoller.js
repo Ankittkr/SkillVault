@@ -125,17 +125,40 @@ ${input}
 
 
 
-    const course = await Course.find({
-        isPublished: true,
-        $or: [
-            { title: { $regex: keywords.join('|'), $options: 'i' } },
-            { subtitle: { $regex: keywords.join('|'), $options: 'i' } },
-            { description: { $regex: keywords.join('|'), $options: 'i' } },
-            { category: { $regex: category, $options: 'i' } },
-            { level: { $regex: level, $options: 'i' } }
-        ]
-    }).populate("reviews")
+const course = await Course.find({
+    isPublished: true,
 
+    category: {
+        $regex: category,
+        $options: "i"
+    },
+
+    level: {
+        $regex: level,
+        $options: "i"
+    },
+
+    $or: [
+        {
+            title: {
+                $regex: keywords.join("|"),
+                $options: "i"
+            }
+        },
+        {
+            subtitle: {
+                $regex: keywords.join("|"),
+                $options: "i"
+            }
+        },
+        {
+            description: {
+                $regex: keywords.join("|"),
+                $options: "i"
+            }
+        }
+    ]
+}).populate("reviews")
     return res.status(200).json(
         new ApiResponse(200, course , "Course found successfully")
     )
