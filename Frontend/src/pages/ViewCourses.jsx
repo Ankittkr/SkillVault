@@ -31,6 +31,7 @@ const ViewCourses = () => {
     const [comment, setComment] = useState("")
     const [creatorCourse, setcreatorCourse] = useState([]);
     const [isEnrolled, setIsEnrolled] = useState(false);
+    const [verifyLoading , setVerifyLoading] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const calAvgRating = (reviews) => {
@@ -83,6 +84,7 @@ const ViewCourses = () => {
             console.log(paymentDetails);
 
             const res = await api.post('/order/verify-payment', { ...paymentDetails })
+            setVerifyLoading(true)
             setIsEnrolled(true)
             console.log(res.data.data);
 
@@ -91,6 +93,9 @@ const ViewCourses = () => {
         } catch (error) {
             console.log(error);
             toast.error(error.response.data.message)
+        }
+        finally{
+            setVerifyLoading(false)
         }
     }
 
@@ -615,12 +620,13 @@ lg:order-2">
                                 onClick={() => navigate(`/viewlectures/${courseId}`)}
                                 className=" w-full bg-green-200 text-green-700 py-4 rounded-xl mt-8 font-semibold hover:bg-green-700 hover:text-green-200 cursor-pointer"
                             >
-                                Wahtch Now
+                                Watch Now
                             </button> : <button
                                 onClick={() => handleEnroll(userdata?._id, courseId)}
                                 className=" w-full bg-black text-white py-4 rounded-xl mt-8 font-semibold hover:bg-gray-800 "
                             >
-                                Enroll Now
+                            {verifyLoading ?  <ClipLoader size={30} color="white"/> :  "Enroll Now"}
+
                             </button>}
 
                             <h3
