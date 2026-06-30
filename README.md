@@ -32,11 +32,6 @@ A modern AI-powered Learning Management System built with MERN Stack.
 # 🎬 Demo Preview
 
 
-<p align="center">
-
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjEx/demo.gif" width="700"/>
-
-</p>
 
 
 ---
@@ -440,25 +435,25 @@ VITE_RAZORPAY_KEY_ID=
 
 # 📸 Screenshots
 
+## 🏠 Landing Page
 
-Add your screenshots:
+The modern landing page showcasing courses, features, and platform highlights.
 
+![Home Page](./screenshots/home.png)
 
-```
-screenshots/
+## 📊 Eduactor Dashboard
 
-├── home.png
+A personalized dashboard where educator can manage  courses, view statistics, and access lectures.
 
-├── dashboard.png
+![User Dashboard](./screenshots/dashboard.png)
 
-├── course.png
+## 🤖 AI Course Search
 
-├── ai-search.png
+AI-powered search that recommends courses based on user learning requirements.
 
-```
-
-
+![AI Search](./screenshots/search.png)
 ---
+
 
 # 🚀 Future Roadmap
 
