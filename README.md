@@ -31,7 +31,7 @@ A modern AI-powered Learning Management System built with MERN Stack.
 
 # 🎬 Demo Preview
 
-
+![LMS Demo](./screenshots/demo.gif)
 
 
 ---
